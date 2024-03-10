@@ -1,1 +1,30 @@
-<p>register works!</p>
+
+{{registrationForm.value | json}}
+    <form [formGroup]="registrationForm" (ngSubmit)="registerUser()"  class=" position-relative p-5">
+      
+        <label for="email" class="form-text p-2"> Email</label>
+        <br>
+      <input formControlName="email"  name="email" [class.is-invalid]="registrationForm.controls?.['email']?.invalid"  class="input-group-text ">
+        {{registrationForm.controls?.['email']?.value}}
+    
+        <label for="userName" class="form-text p-2" > Username</label>
+        <br>
+        <input  formControlName = "userName"  type="text" class="input-group-text">
+   
+
+   
+        <label for="password" class="form-text p-2"> Password</label>
+        <br>
+        <input formControlName="password"  type="password" class="input-group-text " >
+   
+    
+        <label for="confirmPassword" class="form-text p-2" > Confirm Password</label>
+        <br>
+        <input formControlName ="confirmPassword"  class="input-group-text" type="password">
+ 
+        <br>
+    
+        <button class=" btn btn-primary "  type="submit" >Register</button>
+  
+    
+    </form>
