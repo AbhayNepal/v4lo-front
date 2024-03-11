@@ -1,11 +1,10 @@
 
 {{registrationForm.value | json}}
-    <form [formGroup]="registrationForm" (ngSubmit)="registerUser()"  class=" position-relative p-5">
+    <form  [formGroup]="registrationForm"   class=" position-relative p-5">
       
         <label for="email" class="form-text p-2"> Email</label>
         <br>
       <input formControlName="email"  name="email" [class.is-invalid]="registrationForm.controls?.['email']?.invalid"  class="input-group-text ">
-        {{registrationForm.controls?.['email']?.value}}
     
         <label for="userName" class="form-text p-2" > Username</label>
         <br>
@@ -24,7 +23,7 @@
  
         <br>
     
-        <button class=" btn btn-primary "  type="submit" >Register</button>
+        <button class=" btn btn-primary "  type="submit"  (click)="registerUser()">Register</button>
   
     
     </form>
